@@ -1,0 +1,73 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "AutoScalingGroupName": "my-auto-scaling-group",
+                "TargetGroupARNs": [
+                    "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067"
+                ]
+            },
+            "properties": {
+                "AutoScalingGroupName": {
+                    "description": "The name of the Auto Scaling group.",
+                    "maxLength": 1600,
+                    "minLength": 1,
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                },
+                "TargetGroupARNs": {
+                    "description": "The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.",
+                    "items": {
+                        "maxLength": 511,
+                        "minLength": 1,
+                        "type": "string",
+                        "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "AutoScalingGroupName",
+                "TargetGroupARNs"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

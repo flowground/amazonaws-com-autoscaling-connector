@@ -1,0 +1,70 @@
+{
+    "type": "object",
+    "properties": {
+        "MaxRecords": {
+            "required": false,
+            "type": "string"
+        },
+        "NextToken": {
+            "required": false,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "AutoScalingGroupNames": [
+                    "my-auto-scaling-group"
+                ]
+            },
+            "properties": {
+                "AutoScalingGroupNames": {
+                    "description": "The name of the Auto Scaling group.",
+                    "items": {
+                        "maxLength": 1600,
+                        "minLength": 1,
+                        "type": "string",
+                        "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                    },
+                    "type": "array"
+                },
+                "MaxRecords": {
+                    "description": "The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.",
+                    "type": "integer"
+                },
+                "NextToken": {
+                    "description": "The token for the next set of items to return. (You received this token from a previous call.)",
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

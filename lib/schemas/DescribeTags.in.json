@@ -1,0 +1,88 @@
+{
+    "type": "object",
+    "properties": {
+        "MaxRecords": {
+            "required": false,
+            "type": "string"
+        },
+        "NextToken": {
+            "required": false,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "Filters": [
+                    {
+                        "Name": "auto-scaling-group",
+                        "Values": [
+                            "my-auto-scaling-group"
+                        ]
+                    }
+                ]
+            },
+            "properties": {
+                "Filters": {
+                    "description": "One or more filters to scope the tags to return. The maximum number of filters per filter type (for example, <code>auto-scaling-group</code>) is 1000.",
+                    "items": {
+                        "description": "Describes a filter.",
+                        "properties": {
+                            "Name": {
+                                "description": "The name of the filter. The valid values are: <code>\"auto-scaling-group\"</code>, <code>\"key\"</code>, <code>\"value\"</code>, and <code>\"propagate-at-launch\"</code>.",
+                                "type": "string",
+                                "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                            },
+                            "Values": {
+                                "description": "The value of the filter.",
+                                "items": {
+                                    "type": "string",
+                                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "MaxRecords": {
+                    "description": "The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.",
+                    "type": "integer"
+                },
+                "NextToken": {
+                    "description": "The token for the next set of items to return. (You received this token from a previous call.)",
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

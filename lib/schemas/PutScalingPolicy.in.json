@@ -1,0 +1,238 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "AdjustmentType": "ChangeInCapacity",
+                "AutoScalingGroupName": "my-auto-scaling-group",
+                "PolicyName": "ScaleIn",
+                "ScalingAdjustment": -1
+            },
+            "properties": {
+                "AdjustmentType": {
+                    "description": "<p>The adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>This parameter is supported if the policy type is <code>SimpleScaling</code> or <code>StepScaling</code>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html\">Dynamic Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                },
+                "AutoScalingGroupName": {
+                    "description": "The name of the Auto Scaling group.",
+                    "maxLength": 1600,
+                    "minLength": 1,
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                },
+                "Cooldown": {
+                    "description": "<p>The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start. If this parameter is not specified, the default cooldown period for the group applies.</p> <p>This parameter is supported if the policy type is <code>SimpleScaling</code>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html\">Scaling Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+                    "type": "integer"
+                },
+                "EstimatedInstanceWarmup": {
+                    "description": "<p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. The default is to use the value specified for the default cooldown period for the group.</p> <p>This parameter is supported if the policy type is <code>StepScaling</code> or <code>TargetTrackingScaling</code>.</p>",
+                    "type": "integer"
+                },
+                "MetricAggregationType": {
+                    "description": "<p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p> <p>This parameter is supported if the policy type is <code>StepScaling</code>.</p>",
+                    "maxLength": 32,
+                    "minLength": 1,
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                },
+                "MinAdjustmentMagnitude": {
+                    "description": "<p>The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the Auto Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>.</p> <p>This parameter is supported if the policy type is <code>SimpleScaling</code> or <code>StepScaling</code>.</p>",
+                    "type": "integer"
+                },
+                "MinAdjustmentStep": {
+                    "description": "Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.",
+                    "type": "integer"
+                },
+                "PolicyName": {
+                    "description": "The name of the policy.",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                },
+                "PolicyType": {
+                    "description": "The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and <code>TargetTrackingScaling</code>. If the policy type is null, the value is treated as <code>SimpleScaling</code>.",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                },
+                "ScalingAdjustment": {
+                    "description": "<p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p> <p>Conditional: This parameter is required if the policy type is <code>SimpleScaling</code> and not supported otherwise.</p>",
+                    "type": "integer"
+                },
+                "StepAdjustments": {
+                    "description": "<p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p> <p>Conditional: This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>",
+                    "items": {
+                        "description": "<p>Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm. Used in combination with <a>PutScalingPolicy</a>.</p> <p>For the following examples, suppose that you have an alarm with a breach threshold of 50:</p> <ul> <li> <p>To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.</p> </li> <li> <p>To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.</p> </li> </ul> <p>There are a few rules for the step adjustments for your step policy:</p> <ul> <li> <p>The ranges of your step adjustments can't overlap or have a gap.</p> </li> <li> <p>At most, one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.</p> </li> <li> <p>At most, one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.</p> </li> <li> <p>The upper and lower bound can't be null in the same step adjustment.</p> </li> </ul>",
+                        "properties": {
+                            "MetricIntervalLowerBound": {
+                                "description": "The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.",
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "MetricIntervalUpperBound": {
+                                "description": "<p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p> <p>The upper bound must be greater than the lower bound.</p>",
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "ScalingAdjustment": {
+                                "description": "The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.",
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "ScalingAdjustment"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "TargetTrackingConfiguration": {
+                    "description": "<p>A target tracking scaling policy. Includes support for predefined or customized metrics.</p> <p>Conditional: This parameter is required if the policy type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>",
+                    "properties": {
+                        "CustomizedMetricSpecification": {
+                            "description": "A customized metric. You can specify either a predefined metric or a customized metric.",
+                            "properties": {
+                                "Dimensions": {
+                                    "description": "<p>The dimensions of the metric.</p> <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>",
+                                    "items": {
+                                        "description": "Describes the dimension of a metric.",
+                                        "properties": {
+                                            "Name": {
+                                                "description": "The name of the dimension.",
+                                                "type": "string"
+                                            },
+                                            "Value": {
+                                                "description": "The value of the dimension.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "Name",
+                                            "Value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "MetricName": {
+                                    "description": "The name of the metric.",
+                                    "type": "string"
+                                },
+                                "Namespace": {
+                                    "description": "The namespace of the metric.",
+                                    "type": "string"
+                                },
+                                "Statistic": {
+                                    "description": "The statistic of the metric.",
+                                    "enum": [
+                                        "Average",
+                                        "Minimum",
+                                        "Maximum",
+                                        "SampleCount",
+                                        "Sum"
+                                    ],
+                                    "type": "string"
+                                },
+                                "Unit": {
+                                    "description": "The unit of the metric.",
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "MetricName",
+                                "Namespace",
+                                "Statistic"
+                            ],
+                            "type": "object"
+                        },
+                        "DisableScaleIn": {
+                            "description": "Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is disabled.",
+                            "type": "boolean"
+                        },
+                        "PredefinedMetricSpecification": {
+                            "description": "A predefined metric. You can specify either a predefined metric or a customized metric.",
+                            "properties": {
+                                "PredefinedMetricType": {
+                                    "description": "The metric type.",
+                                    "enum": [
+                                        "ASGAverageCPUUtilization",
+                                        "ASGAverageNetworkIn",
+                                        "ASGAverageNetworkOut",
+                                        "ALBRequestCountPerTarget"
+                                    ],
+                                    "type": "string"
+                                },
+                                "ResourceLabel": {
+                                    "description": "<p>Identifies the resource associated with the metric type. The following predefined metrics are available:</p> <ul> <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li> <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed per target in an Application Load Balancer or a Network Load Balancer target group.</p> </li> </ul> <p>For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the metric type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>, the parameter must be specified in the format: <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>, where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the load balancer ARN, and <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the final portion of the target group ARN. The target group must be attached to the Auto Scaling group.</p>",
+                                    "maxLength": 1023,
+                                    "minLength": 1,
+                                    "type": "string",
+                                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                                }
+                            },
+                            "required": [
+                                "PredefinedMetricType"
+                            ],
+                            "type": "object"
+                        },
+                        "TargetValue": {
+                            "description": "The target value for the metric.",
+                            "format": "double",
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "TargetValue"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "AutoScalingGroupName",
+                "PolicyName"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

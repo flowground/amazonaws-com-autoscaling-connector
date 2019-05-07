@@ -1,0 +1,107 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "AutoScalingGroupName": "my-auto-scaling-group",
+                "DesiredCapacity": 4,
+                "EndTime": "2014-05-12T08:00:00Z",
+                "MaxSize": 6,
+                "MinSize": 2,
+                "ScheduledActionName": "my-scheduled-action",
+                "StartTime": "2014-05-12T08:00:00Z"
+            },
+            "properties": {
+                "AutoScalingGroupName": {
+                    "description": "The name of the Auto Scaling group.",
+                    "maxLength": 1600,
+                    "minLength": 1,
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                },
+                "DesiredCapacity": {
+                    "description": "The number of EC2 instances that should be running in the group.",
+                    "type": "integer"
+                },
+                "EndTime": {
+                    "description": "The time for the recurring schedule to end. Amazon EC2 Auto Scaling does not perform the action after this time.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "MaxSize": {
+                    "description": "The maximum size for the Auto Scaling group.",
+                    "type": "integer"
+                },
+                "MinSize": {
+                    "description": "The minimum size for the Auto Scaling group.",
+                    "type": "integer"
+                },
+                "Recurrence": {
+                    "description": "The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>\"30 0 1 1,6,12 *\"</code>). For more information about this format, see <a href=\"http://crontab.org\">Crontab</a>.",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                },
+                "ScheduledActionName": {
+                    "description": "The name of this scaling action.",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                },
+                "StartTime": {
+                    "description": "<p>The time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes (for example, <code>\"2019-06-01T00:00:00Z\"</code>).</p> <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the action at this time, and then performs the action based on the specified recurrence.</p> <p>If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error message.</p>",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "Time": {
+                    "description": "This parameter is deprecated.",
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AutoScalingGroupName",
+                "ScheduledActionName"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

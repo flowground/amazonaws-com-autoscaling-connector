@@ -1,0 +1,88 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "AutoScalingGroupName": "my-auto-scaling-group",
+                "LifecycleActionResult": "CONTINUE",
+                "LifecycleActionToken": "bcd2f1b8-9a78-44d3-8a7a-4dd07d7cf635",
+                "LifecycleHookName": "my-lifecycle-hook"
+            },
+            "properties": {
+                "AutoScalingGroupName": {
+                    "description": "The name of the Auto Scaling group.",
+                    "maxLength": 1600,
+                    "minLength": 1,
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                },
+                "InstanceId": {
+                    "description": "The ID of the instance.",
+                    "maxLength": 19,
+                    "minLength": 1,
+                    "type": "string",
+                    "x-pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+                },
+                "LifecycleActionResult": {
+                    "description": "The action for the group to take. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.",
+                    "type": "string"
+                },
+                "LifecycleActionToken": {
+                    "description": "A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.",
+                    "maxLength": 36,
+                    "minLength": 36,
+                    "type": "string"
+                },
+                "LifecycleHookName": {
+                    "description": "The name of the lifecycle hook.",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "pattern": "[A-Za-z0-9\\-_\\/]+",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LifecycleHookName",
+                "AutoScalingGroupName",
+                "LifecycleActionResult"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
