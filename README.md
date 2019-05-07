@@ -1,11 +1,11 @@
-# ![LOGO](logo.png) Auto Scaling MSP Connector
+# ![LOGO](logo.png) Auto Scaling **flow**ground Connector
 
 ## Description
 
-A generated MSP connector for the Auto Scaling API (version 2011-01-01).
+A generated **flow**ground connector for the Auto Scaling API (version 2011-01-01).
 
 Generated from: https://api.apis.guru/v2/specs/amazonaws.com/autoscaling/2011-01-01/swagger.json<br/>
-Generated at: 2019-05-07T11:15:25+03:00
+Generated at: 2019-05-07T17:35:01+03:00
 
 ## API Description
 
@@ -721,7 +721,7 @@ Supported authorization schemes:
 
 ## License
 
-flowground :- Telekom iPaaS / amazonaws-com-autoscaling-connector<br/>
+**flow**ground :- Telekom iPaaS / amazonaws-com-autoscaling-connector<br/>
 Copyright © 2019, [Deutsche Telekom AG](https://www.telekom.de)<br/>
 contact: flowground@telekom.de
 
