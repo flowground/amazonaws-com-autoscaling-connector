@@ -1,6 +1,6 @@
 {
     "title": "Auto Scaling",
-    "description": "<fullname>Amazon EC2 Auto Scaling</fullname> <p>Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances based on user-defined policies, schedules, and health checks. Use this service with AWS Auto Scaling, Amazon CloudWatch, and Elastic Load Balancing.</p> <p>For more information, including information about granting IAM users required permissions for Amazon EC2 Auto Scaling actions, see the <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html\">Amazon EC2 Auto Scaling User Guide</a>.</p>",
+    "description": "Amazon EC2 Auto Scaling Amazon EC2 Auto Scaling is designed to automatically\nlaunch or terminate EC2 instances based on user-defined policies, schedules, and\nhealth checks. Use this service with AWS Auto Scaling, Amazon CloudWatch, and\nElastic Load Balancing.\n\nFor more information, including information about granting IAM users required\npermissions for Amazon EC2 Auto Scaling actions, see the Amazon EC2 Auto Scaling\nUser Guide\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html]\n.",
     "docsUrl": "https://aws.amazon.com/autoscaling/",
     "url": "https://api.apis.guru/v2/specs/amazonaws.com/autoscaling/2011-01-01/swagger.json",
     "envVars": {},
@@ -20,7 +20,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "hmac": {
+            "auth_hmac": {
                 "label": "Authorization (hmac)",
                 "viewClass": "TextFieldView",
                 "note": "Amazon Signature authorization v4"
@@ -38,8 +38,8 @@
     "actions": {
         "AttachInstances": {
             "main": "./lib/actions/AttachInstances.js",
-            "title": "<p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p> <p>When you attach instances, Amazon EC2 Auto Scaling increases the desired capacity of the group by the number of instances being attached. If the number of instances being attached plus the desired capacity of the group exceeds the maximum size of the group, the operation fails.</p> <p>If there is a Classic Load Balancer attached to your Auto Scaling group, the instances are also registered with the load balancer. If there are target groups attached to your Auto Scaling group, the instances are also registered with the target groups.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html\">Attach EC2 Instances to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p> <p>When you attach instances, Amazon EC2 Auto Scaling increases the desired capacity of the group by the number of instances being attached. If the number of instances being attached plus the desired capacity of the group exceeds the maximum size of the group, the operation fails.</p> <p>If there is a Classic Load Balancer attached to your Auto Scaling group, the instances are also registered with the load balancer. If there are target groups attached to your Auto Scaling group, the instances are also registered with the target groups.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html\">Attach EC2 Instances to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "AttachInstances",
+            "description": "Attaches one or more EC2 instances to the specified Auto Scaling group.\n\nWhen you attach instances, Amazon EC2 Auto Scaling increases the desired\ncapacity of the group by the number of instances being attached. If the number\nof instances being attached plus the desired capacity of the group exceeds the\nmaximum size of the group, the operation fails.\n\nIf there is a Classic Load Balancer attached to your Auto Scaling group, the\ninstances are also registered with the load balancer. If there are target groups\nattached to your Auto Scaling group, the instances are also registered with the\ntarget groups.\n\nFor more information, see Attach EC2 Instances to Your Auto Scaling Group\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -55,8 +55,8 @@
         },
         "AttachLoadBalancerTargetGroups": {
             "main": "./lib/actions/AttachLoadBalancerTargetGroups.js",
-            "title": "<p>Attaches one or more target groups to the specified Auto Scaling group. </p> <p>To describe the target groups for an Auto Scaling group, use <a>DescribeLoadBalancerTargetGroups</a>. To detach the target group from the Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.</p> <p>With Application Load Balancers and Network Load Balancers, instances are registered as targets with a target group. With Classic Load Balancers, instances are registered with the load balancer. For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html\">Attaching a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Attaches one or more target groups to the specified Auto Scaling group. </p> <p>To describe the target groups for an Auto Scaling group, use <a>DescribeLoadBalancerTargetGroups</a>. To detach the target group from the Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.</p> <p>With Application Load Balancers and Network Load Balancers, instances are registered as targets with a target group. With Classic Load Balancers, instances are registered with the load balancer. For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html\">Attaching a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "AttachLoadBalancerTargetGroups",
+            "description": "Attaches one or more target groups to the specified Auto Scaling group. \n\nTo describe the target groups for an Auto Scaling group, use \nDescribeLoadBalancerTargetGroups. To detach the target group from the Auto\nScaling group, use DetachLoadBalancerTargetGroups.\n\nWith Application Load Balancers and Network Load Balancers, instances are\nregistered as targets with a target group. With Classic Load Balancers,\ninstances are registered with the load balancer. For more information, see \nAttaching a Load Balancer to Your Auto Scaling Group\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -72,8 +72,8 @@
         },
         "AttachLoadBalancers": {
             "main": "./lib/actions/AttachLoadBalancers.js",
-            "title": "<p>Attaches one or more Classic Load Balancers to the specified Auto Scaling group.</p> <p>To attach an Application Load Balancer or a Network Load Balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.</p> <p>To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html\">Attaching a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Attaches one or more Classic Load Balancers to the specified Auto Scaling group.</p> <p>To attach an Application Load Balancer or a Network Load Balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.</p> <p>To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html\">Attaching a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "AttachLoadBalancers",
+            "description": "Attaches one or more Classic Load Balancers to the specified Auto Scaling group.\n\nTo attach an Application Load Balancer or a Network Load Balancer instead, see \nAttachLoadBalancerTargetGroups.\n\nTo describe the load balancers for an Auto Scaling group, use \nDescribeLoadBalancers. To detach the load balancer from the Auto Scaling group,\nuse DetachLoadBalancers.\n\nFor more information, see Attaching a Load Balancer to Your Auto Scaling Group\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -89,7 +89,7 @@
         },
         "BatchDeleteScheduledAction": {
             "main": "./lib/actions/BatchDeleteScheduledAction.js",
-            "title": "Deletes one or more scheduled actions for the specified Auto Scaling group.",
+            "title": "BatchDeleteScheduledAction",
             "description": "Deletes one or more scheduled actions for the specified Auto Scaling group.",
             "fields": {
                 "verbose": {
@@ -106,7 +106,7 @@
         },
         "BatchPutScheduledUpdateGroupAction": {
             "main": "./lib/actions/BatchPutScheduledUpdateGroupAction.js",
-            "title": "Creates or updates one or more scheduled scaling actions for an Auto Scaling group. If you leave a parameter unspecified when updating a scheduled scaling action, the corresponding value remains unchanged.",
+            "title": "BatchPutScheduledUpdateGroupAction",
             "description": "Creates or updates one or more scheduled scaling actions for an Auto Scaling group. If you leave a parameter unspecified when updating a scheduled scaling action, the corresponding value remains unchanged.",
             "fields": {
                 "verbose": {
@@ -123,8 +123,8 @@
         },
         "CompleteLifecycleAction": {
             "main": "./lib/actions/CompleteLifecycleAction.js",
-            "title": "<p>Completes the lifecycle action for the specified token or instance with the specified result.</p> <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.</p> </li> <li> <p>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p> </li> <li> <p>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</p> </li> <li> <p>If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.</p> </li> <li> <p> <b>If you finish before the timeout period ends, complete the lifecycle action.</b> </p> </li> </ol> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html\">Amazon EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Completes the lifecycle action for the specified token or instance with the specified result.</p> <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.</p> </li> <li> <p>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p> </li> <li> <p>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</p> </li> <li> <p>If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.</p> </li> <li> <p> <b>If you finish before the timeout period ends, complete the lifecycle action.</b> </p> </li> </ol> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html\">Amazon EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "CompleteLifecycleAction",
+            "description": "Completes the lifecycle action for the specified token or instance with the\nspecified result.\n\nThis step is a part of the procedure for adding a lifecycle hook to an Auto\nScaling group:\n\n 1.  (Optional) Create a Lambda function and a rule that allows CloudWatch\n    Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches\n    or terminates instances.\n    \n    \n 2.  (Optional) Create a notification target and an IAM role. The target can be\n    either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon\n    EC2 Auto Scaling to publish lifecycle notifications to the target.\n    \n    \n 3.  Create the lifecycle hook. Specify whether the hook is used when the\n    instances launch or terminate.\n    \n    \n 4.  If you need more time, record the lifecycle action heartbeat to keep the\n    instance in a pending state.\n    \n    \n 5.   If you finish before the timeout period ends, complete the lifecycle\n    action. \n    \n    \n\nFor more information, see Amazon EC2 Auto Scaling Lifecycle Hooks\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html] in\nthe Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -140,8 +140,8 @@
         },
         "CreateAutoScalingGroup": {
             "main": "./lib/actions/CreateAutoScalingGroup.js",
-            "title": "<p>Creates an Auto Scaling group with the specified name and attributes.</p> <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. For information about viewing this limit, see <a>DescribeAccountLimits</a>. For information about updating this limit, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html\">Amazon EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Creates an Auto Scaling group with the specified name and attributes.</p> <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. For information about viewing this limit, see <a>DescribeAccountLimits</a>. For information about updating this limit, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html\">Amazon EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "CreateAutoScalingGroup",
+            "description": "Creates an Auto Scaling group with the specified name and attributes.\n\nIf you exceed your maximum limit of Auto Scaling groups, the call fails. For\ninformation about viewing this limit, see DescribeAccountLimits. For information\nabout updating this limit, see Amazon EC2 Auto Scaling Limits\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -157,8 +157,8 @@
         },
         "CreateLaunchConfiguration": {
             "main": "./lib/actions/CreateLaunchConfiguration.js",
-            "title": "<p>Creates a launch configuration.</p> <p>If you exceed your maximum limit of launch configurations, the call fails. For information about viewing this limit, see <a>DescribeAccountLimits</a>. For information about updating this limit, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html\">Amazon EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html\">Launch Configurations</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Creates a launch configuration.</p> <p>If you exceed your maximum limit of launch configurations, the call fails. For information about viewing this limit, see <a>DescribeAccountLimits</a>. For information about updating this limit, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html\">Amazon EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html\">Launch Configurations</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "CreateLaunchConfiguration",
+            "description": "Creates a launch configuration.\n\nIf you exceed your maximum limit of launch configurations, the call fails. For\ninformation about viewing this limit, see DescribeAccountLimits. For information\nabout updating this limit, see Amazon EC2 Auto Scaling Limits\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html] \nin the Amazon EC2 Auto Scaling User Guide.\n\nFor more information, see Launch Configurations\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -174,8 +174,8 @@
         },
         "CreateOrUpdateTags": {
             "main": "./lib/actions/CreateOrUpdateTags.js",
-            "title": "<p>Creates or updates tags for the specified Auto Scaling group.</p> <p>When you specify a tag with a key that already exists, the operation overwrites the previous tag definition, and you do not get an error message.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html\">Tagging Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Creates or updates tags for the specified Auto Scaling group.</p> <p>When you specify a tag with a key that already exists, the operation overwrites the previous tag definition, and you do not get an error message.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html\">Tagging Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "CreateOrUpdateTags",
+            "description": "Creates or updates tags for the specified Auto Scaling group.\n\nWhen you specify a tag with a key that already exists, the operation overwrites\nthe previous tag definition, and you do not get an error message.\n\nFor more information, see Tagging Auto Scaling Groups and Instances\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -191,8 +191,8 @@
         },
         "DeleteAutoScalingGroup": {
             "main": "./lib/actions/DeleteAutoScalingGroup.js",
-            "title": "<p>Deletes the specified Auto Scaling group.</p> <p>If the group has instances or scaling activities in progress, you must specify the option to force the deletion in order for it to succeed.</p> <p>If the group has policies, deleting the group deletes the policies, the underlying alarm actions, and any alarm that no longer has an associated action.</p> <p>To remove instances from the Auto Scaling group before deleting it, call <a>DetachInstances</a> with the list of instances and the option to decrement the desired capacity. This ensures that Amazon EC2 Auto Scaling does not launch replacement instances.</p> <p>To terminate all instances before deleting the Auto Scaling group, call <a>UpdateAutoScalingGroup</a> and set the minimum size and desired capacity of the Auto Scaling group to zero.</p>",
-            "description": "<p>Deletes the specified Auto Scaling group.</p> <p>If the group has instances or scaling activities in progress, you must specify the option to force the deletion in order for it to succeed.</p> <p>If the group has policies, deleting the group deletes the policies, the underlying alarm actions, and any alarm that no longer has an associated action.</p> <p>To remove instances from the Auto Scaling group before deleting it, call <a>DetachInstances</a> with the list of instances and the option to decrement the desired capacity. This ensures that Amazon EC2 Auto Scaling does not launch replacement instances.</p> <p>To terminate all instances before deleting the Auto Scaling group, call <a>UpdateAutoScalingGroup</a> and set the minimum size and desired capacity of the Auto Scaling group to zero.</p>",
+            "title": "DeleteAutoScalingGroup",
+            "description": "Deletes the specified Auto Scaling group.\n\nIf the group has instances or scaling activities in progress, you must specify\nthe option to force the deletion in order for it to succeed.\n\nIf the group has policies, deleting the group deletes the policies, the\nunderlying alarm actions, and any alarm that no longer has an associated action.\n\nTo remove instances from the Auto Scaling group before deleting it, call \nDetachInstances with the list of instances and the option to decrement the\ndesired capacity. This ensures that Amazon EC2 Auto Scaling does not launch\nreplacement instances.\n\nTo terminate all instances before deleting the Auto Scaling group, call \nUpdateAutoScalingGroup and set the minimum size and desired capacity of the Auto\nScaling group to zero.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -208,8 +208,8 @@
         },
         "DeleteLaunchConfiguration": {
             "main": "./lib/actions/DeleteLaunchConfiguration.js",
-            "title": "<p>Deletes the specified launch configuration.</p> <p>The launch configuration must not be attached to an Auto Scaling group. When this call completes, the launch configuration is no longer available for use.</p>",
-            "description": "<p>Deletes the specified launch configuration.</p> <p>The launch configuration must not be attached to an Auto Scaling group. When this call completes, the launch configuration is no longer available for use.</p>",
+            "title": "DeleteLaunchConfiguration",
+            "description": "Deletes the specified launch configuration.\n\nThe launch configuration must not be attached to an Auto Scaling group. When\nthis call completes, the launch configuration is no longer available for use.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -225,8 +225,8 @@
         },
         "DeleteLifecycleHook": {
             "main": "./lib/actions/DeleteLifecycleHook.js",
-            "title": "<p>Deletes the specified lifecycle hook.</p> <p>If there are any outstanding lifecycle actions, they are completed first (<code>ABANDON</code> for launching instances, <code>CONTINUE</code> for terminating instances).</p>",
-            "description": "<p>Deletes the specified lifecycle hook.</p> <p>If there are any outstanding lifecycle actions, they are completed first (<code>ABANDON</code> for launching instances, <code>CONTINUE</code> for terminating instances).</p>",
+            "title": "DeleteLifecycleHook",
+            "description": "Deletes the specified lifecycle hook.\n\nIf there are any outstanding lifecycle actions, they are completed first (\nABANDON for launching instances, CONTINUE for terminating instances).",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -242,7 +242,7 @@
         },
         "DeleteNotificationConfiguration": {
             "main": "./lib/actions/DeleteNotificationConfiguration.js",
-            "title": "Deletes the specified notification.",
+            "title": "DeleteNotificationConfiguration",
             "description": "Deletes the specified notification.",
             "fields": {
                 "verbose": {
@@ -259,8 +259,8 @@
         },
         "DeletePolicy": {
             "main": "./lib/actions/DeletePolicy.js",
-            "title": "<p>Deletes the specified scaling policy.</p> <p>Deleting a policy deletes the underlying alarm action, but does not delete the alarm, even if it no longer has an associated action.</p>",
-            "description": "<p>Deletes the specified scaling policy.</p> <p>Deleting a policy deletes the underlying alarm action, but does not delete the alarm, even if it no longer has an associated action.</p>",
+            "title": "DeletePolicy",
+            "description": "Deletes the specified scaling policy.\n\nDeleting a policy deletes the underlying alarm action, but does not delete the\nalarm, even if it no longer has an associated action.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -276,7 +276,7 @@
         },
         "DeleteScheduledAction": {
             "main": "./lib/actions/DeleteScheduledAction.js",
-            "title": "Deletes the specified scheduled action.",
+            "title": "DeleteScheduledAction",
             "description": "Deletes the specified scheduled action.",
             "fields": {
                 "verbose": {
@@ -293,7 +293,7 @@
         },
         "DeleteTags": {
             "main": "./lib/actions/DeleteTags.js",
-            "title": "Deletes the specified tags.",
+            "title": "DeleteTags",
             "description": "Deletes the specified tags.",
             "fields": {
                 "verbose": {
@@ -310,8 +310,8 @@
         },
         "DescribeAccountLimits": {
             "main": "./lib/actions/DescribeAccountLimits.js",
-            "title": "<p>Describes the current Amazon EC2 Auto Scaling resource limits for your AWS account.</p> <p>For information about requesting an increase in these limits, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html\">Amazon EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Describes the current Amazon EC2 Auto Scaling resource limits for your AWS account.</p> <p>For information about requesting an increase in these limits, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html\">Amazon EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "DescribeAccountLimits",
+            "description": "Describes the current Amazon EC2 Auto Scaling resource limits for your AWS\naccount.\n\nFor information about requesting an increase in these limits, see Amazon EC2\nAuto Scaling Limits\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -327,7 +327,7 @@
         },
         "DescribeAdjustmentTypes": {
             "main": "./lib/actions/DescribeAdjustmentTypes.js",
-            "title": "Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.",
+            "title": "DescribeAdjustmentTypes",
             "description": "Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.",
             "fields": {
                 "verbose": {
@@ -344,7 +344,7 @@
         },
         "DescribeAutoScalingGroups": {
             "main": "./lib/actions/DescribeAutoScalingGroups.js",
-            "title": "Describes one or more Auto Scaling groups.",
+            "title": "DescribeAutoScalingGroups",
             "description": "Describes one or more Auto Scaling groups.",
             "fields": {
                 "verbose": {
@@ -361,7 +361,7 @@
         },
         "DescribeAutoScalingInstances": {
             "main": "./lib/actions/DescribeAutoScalingInstances.js",
-            "title": "Describes one or more Auto Scaling instances.",
+            "title": "DescribeAutoScalingInstances",
             "description": "Describes one or more Auto Scaling instances.",
             "fields": {
                 "verbose": {
@@ -378,7 +378,7 @@
         },
         "DescribeAutoScalingNotificationTypes": {
             "main": "./lib/actions/DescribeAutoScalingNotificationTypes.js",
-            "title": "Describes the notification types that are supported by Amazon EC2 Auto Scaling.",
+            "title": "DescribeAutoScalingNotificationTypes",
             "description": "Describes the notification types that are supported by Amazon EC2 Auto Scaling.",
             "fields": {
                 "verbose": {
@@ -395,7 +395,7 @@
         },
         "DescribeLaunchConfigurations": {
             "main": "./lib/actions/DescribeLaunchConfigurations.js",
-            "title": "Describes one or more launch configurations.",
+            "title": "DescribeLaunchConfigurations",
             "description": "Describes one or more launch configurations.",
             "fields": {
                 "verbose": {
@@ -412,8 +412,8 @@
         },
         "DescribeLifecycleHookTypes": {
             "main": "./lib/actions/DescribeLifecycleHookTypes.js",
-            "title": "<p>Describes the available types of lifecycle hooks.</p> <p>The following hook types are supported:</p> <ul> <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>",
-            "description": "<p>Describes the available types of lifecycle hooks.</p> <p>The following hook types are supported:</p> <ul> <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>",
+            "title": "DescribeLifecycleHookTypes",
+            "description": "Describes the available types of lifecycle hooks.\n\nThe following hook types are supported:\n\n *  autoscaling:EC2_INSTANCE_LAUNCHING\n   \n   \n *  autoscaling:EC2_INSTANCE_TERMINATING",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -429,7 +429,7 @@
         },
         "DescribeLifecycleHooks": {
             "main": "./lib/actions/DescribeLifecycleHooks.js",
-            "title": "Describes the lifecycle hooks for the specified Auto Scaling group.",
+            "title": "DescribeLifecycleHooks",
             "description": "Describes the lifecycle hooks for the specified Auto Scaling group.",
             "fields": {
                 "verbose": {
@@ -446,7 +446,7 @@
         },
         "DescribeLoadBalancerTargetGroups": {
             "main": "./lib/actions/DescribeLoadBalancerTargetGroups.js",
-            "title": "Describes the target groups for the specified Auto Scaling group.",
+            "title": "DescribeLoadBalancerTargetGroups",
             "description": "Describes the target groups for the specified Auto Scaling group.",
             "fields": {
                 "verbose": {
@@ -463,8 +463,8 @@
         },
         "DescribeLoadBalancers": {
             "main": "./lib/actions/DescribeLoadBalancers.js",
-            "title": "<p>Describes the load balancers for the specified Auto Scaling group.</p> <p>This operation describes only Classic Load Balancers. If you have Application Load Balancers or Network Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.</p>",
-            "description": "<p>Describes the load balancers for the specified Auto Scaling group.</p> <p>This operation describes only Classic Load Balancers. If you have Application Load Balancers or Network Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.</p>",
+            "title": "DescribeLoadBalancers",
+            "description": "Describes the load balancers for the specified Auto Scaling group.\n\nThis operation describes only Classic Load Balancers. If you have Application\nLoad Balancers or Network Load Balancers, use DescribeLoadBalancerTargetGroups \ninstead.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -480,8 +480,8 @@
         },
         "DescribeMetricCollectionTypes": {
             "main": "./lib/actions/DescribeMetricCollectionTypes.js",
-            "title": "<p>Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.</p> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.</p>",
-            "description": "<p>Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.</p> <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.</p>",
+            "title": "DescribeMetricCollectionTypes",
+            "description": "Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.\n\nThe GroupStandbyInstances metric is not returned by default. You must explicitly\nrequest this metric when calling EnableMetricsCollection.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -497,7 +497,7 @@
         },
         "DescribeNotificationConfigurations": {
             "main": "./lib/actions/DescribeNotificationConfigurations.js",
-            "title": "Describes the notification actions associated with the specified Auto Scaling group.",
+            "title": "DescribeNotificationConfigurations",
             "description": "Describes the notification actions associated with the specified Auto Scaling group.",
             "fields": {
                 "verbose": {
@@ -514,7 +514,7 @@
         },
         "DescribePolicies": {
             "main": "./lib/actions/DescribePolicies.js",
-            "title": "Describes the policies for the specified Auto Scaling group.",
+            "title": "DescribePolicies",
             "description": "Describes the policies for the specified Auto Scaling group.",
             "fields": {
                 "verbose": {
@@ -531,7 +531,7 @@
         },
         "DescribeScalingActivities": {
             "main": "./lib/actions/DescribeScalingActivities.js",
-            "title": "Describes one or more scaling activities for the specified Auto Scaling group.",
+            "title": "DescribeScalingActivities",
             "description": "Describes one or more scaling activities for the specified Auto Scaling group.",
             "fields": {
                 "verbose": {
@@ -548,7 +548,7 @@
         },
         "DescribeScalingProcessTypes": {
             "main": "./lib/actions/DescribeScalingProcessTypes.js",
-            "title": "Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.",
+            "title": "DescribeScalingProcessTypes",
             "description": "Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.",
             "fields": {
                 "verbose": {
@@ -565,7 +565,7 @@
         },
         "DescribeScheduledActions": {
             "main": "./lib/actions/DescribeScheduledActions.js",
-            "title": "Describes the actions scheduled for your Auto Scaling group that haven't run. To describe the actions that have already run, use <a>DescribeScalingActivities</a>.",
+            "title": "DescribeScheduledActions",
             "description": "Describes the actions scheduled for your Auto Scaling group that haven't run. To describe the actions that have already run, use <a>DescribeScalingActivities</a>.",
             "fields": {
                 "verbose": {
@@ -582,8 +582,8 @@
         },
         "DescribeTags": {
             "main": "./lib/actions/DescribeTags.js",
-            "title": "<p>Describes the specified tags.</p> <p>You can use filters to limit the results. For example, you can query for the tags for a specific Auto Scaling group. You can specify multiple values for a filter. A tag must match at least one of the specified values for it to be included in the results.</p> <p>You can also specify multiple filters. The result includes information for a particular tag only if it matches all the filters. If there's no match, no special message is returned.</p>",
-            "description": "<p>Describes the specified tags.</p> <p>You can use filters to limit the results. For example, you can query for the tags for a specific Auto Scaling group. You can specify multiple values for a filter. A tag must match at least one of the specified values for it to be included in the results.</p> <p>You can also specify multiple filters. The result includes information for a particular tag only if it matches all the filters. If there's no match, no special message is returned.</p>",
+            "title": "DescribeTags",
+            "description": "Describes the specified tags.\n\nYou can use filters to limit the results. For example, you can query for the\ntags for a specific Auto Scaling group. You can specify multiple values for a\nfilter. A tag must match at least one of the specified values for it to be\nincluded in the results.\n\nYou can also specify multiple filters. The result includes information for a\nparticular tag only if it matches all the filters. If there's no match, no\nspecial message is returned.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -599,8 +599,8 @@
         },
         "DescribeTerminationPolicyTypes": {
             "main": "./lib/actions/DescribeTerminationPolicyTypes.js",
-            "title": "<p>Describes the termination policies supported by Amazon EC2 Auto Scaling.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html\">Controlling Which Auto Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Describes the termination policies supported by Amazon EC2 Auto Scaling.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html\">Controlling Which Auto Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "DescribeTerminationPolicyTypes",
+            "description": "Describes the termination policies supported by Amazon EC2 Auto Scaling.\n\nFor more information, see Controlling Which Auto Scaling Instances Terminate\nDuring Scale In\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -616,8 +616,8 @@
         },
         "DetachInstances": {
             "main": "./lib/actions/DetachInstances.js",
-            "title": "<p>Removes one or more instances from the specified Auto Scaling group.</p> <p>After the instances are detached, you can manage them independent of the Auto Scaling group.</p> <p>If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto Scaling launches instances to replace the ones that are detached.</p> <p>If there is a Classic Load Balancer attached to the Auto Scaling group, the instances are deregistered from the load balancer. If there are target groups attached to the Auto Scaling group, the instances are deregistered from the target groups.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html\">Detach EC2 Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Removes one or more instances from the specified Auto Scaling group.</p> <p>After the instances are detached, you can manage them independent of the Auto Scaling group.</p> <p>If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto Scaling launches instances to replace the ones that are detached.</p> <p>If there is a Classic Load Balancer attached to the Auto Scaling group, the instances are deregistered from the load balancer. If there are target groups attached to the Auto Scaling group, the instances are deregistered from the target groups.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html\">Detach EC2 Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "DetachInstances",
+            "description": "Removes one or more instances from the specified Auto Scaling group.\n\nAfter the instances are detached, you can manage them independent of the Auto\nScaling group.\n\nIf you do not specify the option to decrement the desired capacity, Amazon EC2\nAuto Scaling launches instances to replace the ones that are detached.\n\nIf there is a Classic Load Balancer attached to the Auto Scaling group, the\ninstances are deregistered from the load balancer. If there are target groups\nattached to the Auto Scaling group, the instances are deregistered from the\ntarget groups.\n\nFor more information, see Detach EC2 Instances from Your Auto Scaling Group\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -633,7 +633,7 @@
         },
         "DetachLoadBalancerTargetGroups": {
             "main": "./lib/actions/DetachLoadBalancerTargetGroups.js",
-            "title": "Detaches one or more target groups from the specified Auto Scaling group.",
+            "title": "DetachLoadBalancerTargetGroups",
             "description": "Detaches one or more target groups from the specified Auto Scaling group.",
             "fields": {
                 "verbose": {
@@ -650,8 +650,8 @@
         },
         "DetachLoadBalancers": {
             "main": "./lib/actions/DetachLoadBalancers.js",
-            "title": "<p>Detaches one or more Classic Load Balancers from the specified Auto Scaling group.</p> <p>This operation detaches only Classic Load Balancers. If you have Application Load Balancers or Network Load Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.</p> <p>When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the load balancer using <a>DescribeLoadBalancers</a>. The instances remain running.</p>",
-            "description": "<p>Detaches one or more Classic Load Balancers from the specified Auto Scaling group.</p> <p>This operation detaches only Classic Load Balancers. If you have Application Load Balancers or Network Load Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.</p> <p>When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the load balancer using <a>DescribeLoadBalancers</a>. The instances remain running.</p>",
+            "title": "DetachLoadBalancers",
+            "description": "Detaches one or more Classic Load Balancers from the specified Auto Scaling\ngroup.\n\nThis operation detaches only Classic Load Balancers. If you have Application\nLoad Balancers or Network Load Balancers, use DetachLoadBalancerTargetGroups \ninstead.\n\nWhen you detach a load balancer, it enters the Removing state while\nderegistering the instances in the group. When all instances are deregistered,\nthen you can no longer describe the load balancer using DescribeLoadBalancers.\nThe instances remain running.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -667,7 +667,7 @@
         },
         "DisableMetricsCollection": {
             "main": "./lib/actions/DisableMetricsCollection.js",
-            "title": "Disables group metrics for the specified Auto Scaling group.",
+            "title": "DisableMetricsCollection",
             "description": "Disables group metrics for the specified Auto Scaling group.",
             "fields": {
                 "verbose": {
@@ -684,7 +684,7 @@
         },
         "EnableMetricsCollection": {
             "main": "./lib/actions/EnableMetricsCollection.js",
-            "title": "Enables group metrics for the specified Auto Scaling group. For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html\">Monitoring Your Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.",
+            "title": "EnableMetricsCollection",
             "description": "Enables group metrics for the specified Auto Scaling group. For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html\">Monitoring Your Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.",
             "fields": {
                 "verbose": {
@@ -701,8 +701,8 @@
         },
         "EnterStandby": {
             "main": "./lib/actions/EnterStandby.js",
-            "title": "<p>Moves the specified instances into the standby state.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html\">Temporarily Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Moves the specified instances into the standby state.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html\">Temporarily Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "EnterStandby",
+            "description": "Moves the specified instances into the standby state.\n\nFor more information, see Temporarily Removing Instances from Your Auto Scaling\nGroup\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -718,7 +718,7 @@
         },
         "ExecutePolicy": {
             "main": "./lib/actions/ExecutePolicy.js",
-            "title": "Executes the specified policy.",
+            "title": "ExecutePolicy",
             "description": "Executes the specified policy.",
             "fields": {
                 "verbose": {
@@ -735,8 +735,8 @@
         },
         "ExitStandby": {
             "main": "./lib/actions/ExitStandby.js",
-            "title": "<p>Moves the specified instances out of the standby state.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html\">Temporarily Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Moves the specified instances out of the standby state.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html\">Temporarily Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "ExitStandby",
+            "description": "Moves the specified instances out of the standby state.\n\nFor more information, see Temporarily Removing Instances from Your Auto Scaling\nGroup\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -752,8 +752,8 @@
         },
         "PutLifecycleHook": {
             "main": "./lib/actions/PutLifecycleHook.js",
-            "title": "<p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p> <p>A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance when the instance launches (before it is put into service) or as the instance terminates (before it is fully terminated).</p> <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.</p> </li> <li> <p>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p> </li> <li> <p> <b>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</b> </p> </li> <li> <p>If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state using using <a>RecordLifecycleActionHeartbeat</a>.</p> </li> <li> <p>If you finish before the timeout period ends, complete the lifecycle action using <a>CompleteLifecycleAction</a>.</p> </li> </ol> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html\">Amazon EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>If you exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto Scaling group, the call fails.</p> <p>You can view the lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>. If you are no longer using a lifecycle hook, you can delete it using <a>DeleteLifecycleHook</a>.</p>",
-            "description": "<p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p> <p>A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance when the instance launches (before it is put into service) or as the instance terminates (before it is fully terminated).</p> <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.</p> </li> <li> <p>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p> </li> <li> <p> <b>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</b> </p> </li> <li> <p>If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state using using <a>RecordLifecycleActionHeartbeat</a>.</p> </li> <li> <p>If you finish before the timeout period ends, complete the lifecycle action using <a>CompleteLifecycleAction</a>.</p> </li> </ol> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html\">Amazon EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>If you exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto Scaling group, the call fails.</p> <p>You can view the lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>. If you are no longer using a lifecycle hook, you can delete it using <a>DeleteLifecycleHook</a>.</p>",
+            "title": "PutLifecycleHook",
+            "description": "Creates or updates a lifecycle hook for the specified Auto Scaling group.\n\nA lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an\ninstance when the instance launches (before it is put into service) or as the\ninstance terminates (before it is fully terminated).\n\nThis step is a part of the procedure for adding a lifecycle hook to an Auto\nScaling group:\n\n 1.  (Optional) Create a Lambda function and a rule that allows CloudWatch\n    Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches\n    or terminates instances.\n    \n    \n 2.  (Optional) Create a notification target and an IAM role. The target can be\n    either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon\n    EC2 Auto Scaling to publish lifecycle notifications to the target.\n    \n    \n 3.   Create the lifecycle hook. Specify whether the hook is used when the\n    instances launch or terminate. \n    \n    \n 4.  If you need more time, record the lifecycle action heartbeat to keep the\n    instance in a pending state using using RecordLifecycleActionHeartbeat.\n    \n    \n 5.  If you finish before the timeout period ends, complete the lifecycle action\n    using CompleteLifecycleAction.\n    \n    \n\nFor more information, see Amazon EC2 Auto Scaling Lifecycle Hooks\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html] in\nthe Amazon EC2 Auto Scaling User Guide.\n\nIf you exceed your maximum limit of lifecycle hooks, which by default is 50 per\nAuto Scaling group, the call fails.\n\nYou can view the lifecycle hooks for an Auto Scaling group using \nDescribeLifecycleHooks. If you are no longer using a lifecycle hook, you can\ndelete it using DeleteLifecycleHook.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -769,8 +769,8 @@
         },
         "PutNotificationConfiguration": {
             "main": "./lib/actions/PutNotificationConfiguration.js",
-            "title": "<p>Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to the specified topic can have messages delivered to an endpoint such as a web server or an email address.</p> <p>This configuration overwrites any existing configuration.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html\">Getting Amazon SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to the specified topic can have messages delivered to an endpoint such as a web server or an email address.</p> <p>This configuration overwrites any existing configuration.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html\">Getting Amazon SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "PutNotificationConfiguration",
+            "description": "Configures an Auto Scaling group to send notifications when specified events\ntake place. Subscribers to the specified topic can have messages delivered to an\nendpoint such as a web server or an email address.\n\nThis configuration overwrites any existing configuration.\n\nFor more information, see Getting Amazon SNS Notifications When Your Auto\nScaling Group Scales\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -786,7 +786,7 @@
         },
         "PutScalingPolicy": {
             "main": "./lib/actions/PutScalingPolicy.js",
-            "title": "Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the parameters to change. Any existing parameter not changed in an update to an existing policy is not changed in this update request.",
+            "title": "PutScalingPolicy",
             "description": "Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the parameters to change. Any existing parameter not changed in an update to an existing policy is not changed in this update request.",
             "fields": {
                 "verbose": {
@@ -803,8 +803,8 @@
         },
         "PutScheduledUpdateGroupAction": {
             "main": "./lib/actions/PutScheduledUpdateGroupAction.js",
-            "title": "<p>Creates or updates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified when updating a scheduled scaling action, the corresponding value remains unchanged.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html\">Scheduled Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Creates or updates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified when updating a scheduled scaling action, the corresponding value remains unchanged.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html\">Scheduled Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "PutScheduledUpdateGroupAction",
+            "description": "Creates or updates a scheduled scaling action for an Auto Scaling group. If you\nleave a parameter unspecified when updating a scheduled scaling action, the\ncorresponding value remains unchanged.\n\nFor more information, see Scheduled Scaling\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html] in\nthe Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -820,8 +820,8 @@
         },
         "RecordLifecycleActionHeartbeat": {
             "main": "./lib/actions/RecordLifecycleActionHeartbeat.js",
-            "title": "<p>Records a heartbeat for the lifecycle action associated with the specified token or instance. This extends the timeout by the length of time defined using <a>PutLifecycleHook</a>.</p> <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.</p> </li> <li> <p>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p> </li> <li> <p>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</p> </li> <li> <p> <b>If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.</b> </p> </li> <li> <p>If you finish before the timeout period ends, complete the lifecycle action.</p> </li> </ol> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html\">Auto Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Records a heartbeat for the lifecycle action associated with the specified token or instance. This extends the timeout by the length of time defined using <a>PutLifecycleHook</a>.</p> <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.</p> </li> <li> <p>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p> </li> <li> <p>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</p> </li> <li> <p> <b>If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.</b> </p> </li> <li> <p>If you finish before the timeout period ends, complete the lifecycle action.</p> </li> </ol> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html\">Auto Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "RecordLifecycleActionHeartbeat",
+            "description": "Records a heartbeat for the lifecycle action associated with the specified token\nor instance. This extends the timeout by the length of time defined using \nPutLifecycleHook.\n\nThis step is a part of the procedure for adding a lifecycle hook to an Auto\nScaling group:\n\n 1.  (Optional) Create a Lambda function and a rule that allows CloudWatch\n    Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches\n    or terminates instances.\n    \n    \n 2.  (Optional) Create a notification target and an IAM role. The target can be\n    either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon\n    EC2 Auto Scaling to publish lifecycle notifications to the target.\n    \n    \n 3.  Create the lifecycle hook. Specify whether the hook is used when the\n    instances launch or terminate.\n    \n    \n 4.   If you need more time, record the lifecycle action heartbeat to keep the\n    instance in a pending state. \n    \n    \n 5.  If you finish before the timeout period ends, complete the lifecycle\n    action.\n    \n    \n\nFor more information, see Auto Scaling Lifecycle\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -837,8 +837,8 @@
         },
         "ResumeProcesses": {
             "main": "./lib/actions/ResumeProcesses.js",
-            "title": "<p>Resumes the specified suspended automatic scaling processes, or all suspended process, for the specified Auto Scaling group.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html\">Suspending and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Resumes the specified suspended automatic scaling processes, or all suspended process, for the specified Auto Scaling group.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html\">Suspending and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "ResumeProcesses",
+            "description": "Resumes the specified suspended automatic scaling processes, or all suspended\nprocess, for the specified Auto Scaling group.\n\nFor more information, see Suspending and Resuming Scaling Processes\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -854,8 +854,8 @@
         },
         "SetDesiredCapacity": {
             "main": "./lib/actions/SetDesiredCapacity.js",
-            "title": "<p>Sets the size of the specified Auto Scaling group.</p> <p>For more information about desired capacity, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html\">What Is Amazon EC2 Auto Scaling?</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Sets the size of the specified Auto Scaling group.</p> <p>For more information about desired capacity, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html\">What Is Amazon EC2 Auto Scaling?</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "SetDesiredCapacity",
+            "description": "Sets the size of the specified Auto Scaling group.\n\nFor more information about desired capacity, see What Is Amazon EC2 Auto\nScaling?\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -871,8 +871,8 @@
         },
         "SetInstanceHealth": {
             "main": "./lib/actions/SetInstanceHealth.js",
-            "title": "<p>Sets the health status of the specified instance.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html\">Health Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Sets the health status of the specified instance.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html\">Health Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "SetInstanceHealth",
+            "description": "Sets the health status of the specified instance.\n\nFor more information, see Health Checks for Auto Scaling Instances\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html] in the \nAmazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -888,8 +888,8 @@
         },
         "SetInstanceProtection": {
             "main": "./lib/actions/SetInstanceProtection.js",
-            "title": "<p>Updates the instance protection settings of the specified instances.</p> <p>For more information about preventing instances that are part of an Auto Scaling group from terminating on scale in, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection\">Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Updates the instance protection settings of the specified instances.</p> <p>For more information about preventing instances that are part of an Auto Scaling group from terminating on scale in, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection\">Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "SetInstanceProtection",
+            "description": "Updates the instance protection settings of the specified instances.\n\nFor more information about preventing instances that are part of an Auto Scaling\ngroup from terminating on scale in, see Instance Protection\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -905,8 +905,8 @@
         },
         "SuspendProcesses": {
             "main": "./lib/actions/SuspendProcesses.js",
-            "title": "<p>Suspends the specified automatic scaling processes, or all processes, for the specified Auto Scaling group.</p> <p>If you suspend either the <code>Launch</code> or <code>Terminate</code> process types, it can prevent other process types from functioning properly.</p> <p>To resume processes that have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html\">Suspending and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
-            "description": "<p>Suspends the specified automatic scaling processes, or all processes, for the specified Auto Scaling group.</p> <p>If you suspend either the <code>Launch</code> or <code>Terminate</code> process types, it can prevent other process types from functioning properly.</p> <p>To resume processes that have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html\">Suspending and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>",
+            "title": "SuspendProcesses",
+            "description": "Suspends the specified automatic scaling processes, or all processes, for the\nspecified Auto Scaling group.\n\nIf you suspend either the Launch or Terminate process types, it can prevent\nother process types from functioning properly.\n\nTo resume processes that have been suspended, use ResumeProcesses.\n\nFor more information, see Suspending and Resuming Scaling Processes\n[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html] \nin the Amazon EC2 Auto Scaling User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -922,8 +922,8 @@
         },
         "TerminateInstanceInAutoScalingGroup": {
             "main": "./lib/actions/TerminateInstanceInAutoScalingGroup.js",
-            "title": "<p>Terminates the specified instance and optionally adjusts the desired group size.</p> <p>This call simply makes a termination request. The instance is not terminated immediately.</p>",
-            "description": "<p>Terminates the specified instance and optionally adjusts the desired group size.</p> <p>This call simply makes a termination request. The instance is not terminated immediately.</p>",
+            "title": "TerminateInstanceInAutoScalingGroup",
+            "description": "Terminates the specified instance and optionally adjusts the desired group size.\n\nThis call simply makes a termination request. The instance is not terminated\nimmediately.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -939,8 +939,8 @@
         },
         "UpdateAutoScalingGroup": {
             "main": "./lib/actions/UpdateAutoScalingGroup.js",
-            "title": "<p>Updates the configuration for the specified Auto Scaling group.</p> <p>The new settings take effect on any scaling activities after this call returns. Scaling activities that are currently in progress aren't affected.</p> <p>To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to <code>false</code>, you must first disable the collection of group metrics. Otherwise, you get an error. If you have previously enabled the collection of group metrics, you can disable it using <a>DisableMetricsCollection</a>.</p> <p>Note the following:</p> <ul> <li> <p>If you specify a new value for <code>MinSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MinSize</code>.</p> </li> <li> <p>If you specify a new value for <code>MaxSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MaxSize</code>.</p> </li> <li> <p>All other optional parameters are left unchanged if not specified.</p> </li> </ul>",
-            "description": "<p>Updates the configuration for the specified Auto Scaling group.</p> <p>The new settings take effect on any scaling activities after this call returns. Scaling activities that are currently in progress aren't affected.</p> <p>To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to <code>false</code>, you must first disable the collection of group metrics. Otherwise, you get an error. If you have previously enabled the collection of group metrics, you can disable it using <a>DisableMetricsCollection</a>.</p> <p>Note the following:</p> <ul> <li> <p>If you specify a new value for <code>MinSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MinSize</code>.</p> </li> <li> <p>If you specify a new value for <code>MaxSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MaxSize</code>.</p> </li> <li> <p>All other optional parameters are left unchanged if not specified.</p> </li> </ul>",
+            "title": "UpdateAutoScalingGroup",
+            "description": "Updates the configuration for the specified Auto Scaling group.\n\nThe new settings take effect on any scaling activities after this call returns.\nScaling activities that are currently in progress aren't affected.\n\nTo update an Auto Scaling group with a launch configuration with \nInstanceMonitoring set to false, you must first disable the collection of group\nmetrics. Otherwise, you get an error. If you have previously enabled the\ncollection of group metrics, you can disable it using DisableMetricsCollection.\n\nNote the following:\n\n *  If you specify a new value for MinSize without specifying a value for \n   DesiredCapacity, and the new MinSize is larger than the current size of the\n   group, we implicitly call SetDesiredCapacity to set the size of the group to\n   the new value of MinSize.\n   \n   \n *  If you specify a new value for MaxSize without specifying a value for \n   DesiredCapacity, and the new MaxSize is smaller than the current size of the\n   group, we implicitly call SetDesiredCapacity to set the size of the group to\n   the new value of MaxSize.\n   \n   \n *  All other optional parameters are left unchanged if not specified.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
